@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.todo_list.ActivityEditTodo">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/description_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/border"
+            android:hint="@string/description_hint"
+            android:inputType="textPersonName"
+
+            android:padding="5dp"
+            android:textColorHint="@color/text_light_color"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/todo_type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/description_edit"
+            android:layout_margin="5dp"
+            android:background="@drawable/border" />
+
+        <CheckBox
+            android:id="@+id/todo_is_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/new_type_panel"
+            android:text="@string/is_done" />
+
+        <RelativeLayout
+            android:id="@+id/new_type_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/todo_type_spinner"
+            android:layout_margin="3dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/hint_add_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/new_type"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:textColorHint="@color/text_light_color"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/todo_type_name_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hint_add_type"
+                android:layout_margin="5dp"
+                android:background="@drawable/border"
+                android:hint="@string/type_name_hint"
+                android:inputType="textPersonName"
+
+                android:padding="5dp"
+                android:textColorHint="@color/text_light_color"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:id="@+id/select_color_panel"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/todo_type_name_edit"
+                android:layout_margin="5dp"
+                android:background="@drawable/border">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:onClick="selectColor"
+                    android:text="@string/type_color_hint" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/todo_is_done"
+            android:layout_margin="15dp"
+            android:onClick="saveTodo"
+            android:text="@string/save_todo" />
+
+    </RelativeLayout>
+</ScrollView>
